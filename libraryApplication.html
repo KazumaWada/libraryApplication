@@ -1,8 +1,3 @@
-<!-- 
-    ToDo:
-    検索ボタンがクリックされたら、入力されたinputタグのデータに基づき、APIから情報を取得し、その情報をコンソールに出力する処理を実装してください。
-    ボタンがクリックされたら、変数isbnにinputタグのvalue属性を格納してください。またfetch関数を使ってAPIから情報を取得し、コンソールに出力してください。 
--->
 <!doctype html>
 <html lang="en">
 <head>
@@ -66,7 +61,7 @@ searchBtn.addEventListener("click", function () {
     .then((response) => response.json())
     .then(function (data) {
       //console.log(data);
-      //ユーザーがクリックするたびにループされる
+      //ユーザーがクリックするたびにobject内のkeyが全てループされる
       for (let bookKey in data) {
           //全て全データが表示される
           //console.log(data);
@@ -135,7 +130,7 @@ function generateBookCard(book) {
   return container;
 }
 
-// 配列を文字列へ変換します。
+// 配列を文字列へ
 function parseDataOL(data) {
   let parsed = "";
   for (let i = 0; i < data.length - 1; i++) {
